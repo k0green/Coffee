@@ -1,0 +1,26 @@
+﻿@model Coffee.Entities.Drink
+@{
+    ViewBag.Title = "Add drink";
+}
+<a asp-action="AdminFirstPage" asp-controller="Home">move to main page</a>
+<form asp-action="CreateDrink" asp-controller="Drink">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Volume" class="control-label">Volume</label>
+        <input type="number" asp-for="Volume" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PreparingTime" class="control-label">Preparing time</label>
+        <input type="time" asp-for="PreparingTime" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Coast" class="control-label">Coast</label>
+        <input type="number" asp-for="Coast" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Send" class="btn btn-default" />
+    </div>
+</form>

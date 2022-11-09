@@ -1,0 +1,31 @@
+﻿@model Coffee.Entities.Wallet
+@{
+    ViewBag.Title = "User profile";
+}
+@if (@ViewData["UserRole"].ToString() == "user")
+{
+    <a asp-action="UserFirstPage">move to main page</a>
+}
+else
+{
+    <a asp-action="AdminFirstPage">move to main page</a>
+}
+<dl class="dl-horizontal">
+    <dt>User id</dt>
+    <dd>
+        @ViewData["UserId"]
+    </dd>
+    <dt>Name </dt>
+    <dd>
+        @ViewData["UserName"]
+    </dd>
+            <dt>Role</dt>
+            <dd>
+        @ViewData["UserRole"]
+            </dd>
+
+            <dt>Money</dt>
+            <dd>
+        @ViewData["UserMoney"]
+            </dd>
+</dl>

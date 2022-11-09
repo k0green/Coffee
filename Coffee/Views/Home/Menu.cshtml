@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Coffee.Entities.Drink>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Menu</title>
+</head>
+<body>
+    <h3>Drinks</h3>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Coast</td>
+            <td>Volume</td>
+            <td></td>
+        </tr>
+        @foreach (var drink in Model)
+        {
+            <tr>
+                <td>@drink.Id</td>
+                <td>@drink.Name</td>
+                <td>@drink.Coast</td>
+                <td>@drink.Volume</td>
+                <td><a href="~/Home/MenuPost?id=@drink.Id">Buy</a></td>
+            </tr>
+        }
+        <a href="~/Home/BuyDrink">Basket</a>
+    </table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@model Coffee.Entities.Ingredient
+@{
+    ViewBag.Title = "Delete ingredient";
+}
+<a asp-action="AdminFirstPage" asp-controller="Home">move to main page</a>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Id</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>Name</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>Volume</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+
+    <div>
+        <form asp-controller="Ingredients" asp-action="DeleteIngredient" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Delete" />
+            </div>
+        </form>
+    </div>
+</div>

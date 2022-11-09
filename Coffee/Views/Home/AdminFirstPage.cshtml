@@ -1,0 +1,14 @@
+﻿@model Coffee.Entities.User
+<html>
+<head>
+    <title>Welkom</title>
+</head>
+    <table>
+    <input type="hidden" value="@ViewData["AdminId"]" name="Id" />
+                <td><a href="~/Drink/DisplayDrinks">   see drinks   </a></td>
+                <td><a href="~/Ingredients/DisplayIngredients">   see ingredients   </a></td>
+                <td><a href="~/IngredientOfDrink/DisplayIngredientOfDrink">   Display ingredients in drink   </a></td>
+                <td><a href="~/Home/DisplayBills">   see bills   </a></td>
+                <td><a href="~/Home/UserProfile?id=@ViewData["UserId"]">   profile   </a></td>
+    </table>
+</html>

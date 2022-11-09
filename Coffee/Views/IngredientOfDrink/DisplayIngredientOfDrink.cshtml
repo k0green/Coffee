@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Coffee.Entities.DrinksingredientItemModel>
+@{
+    ViewBag.Title = "Сomposition";
+}
+<a asp-action="AdminFirstPage" asp-controller="Home">move to main page</a>
+<a asp-action="CreateIngredientOfDrink">Добавить ingredient</a>
+<table class="table">
+    <tr>
+        <td>DrinkId</td>
+        <td>IngredientId</td>
+        <td>Amount</td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DrinkId</td>
+            <td>@item.IngredientsId</td>
+            <td>@item.AmountInOneDrink</td>
+            <td><a href="~/IngredientOfDrink/EditIngredientOfDrink?idd=@item.DrinkId&idi=@item.IngredientsId">edit drink</a></td>
+            <td><a href="~/IngredientOfDrink/DeleteIngredientOfDrink?idd=@item.DrinkId&idi=@item.IngredientsId">delete drink</a></td>
+        </tr>
+    }
+</table>

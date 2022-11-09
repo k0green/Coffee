@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Coffee.Entities.Bill>
+@{
+    ViewBag.Title = "All bills";
+}
+<a asp-action="AdminFirstPage">move to main page</a>
+<table class="table">
+    <tr><td>Id</td><td>Sum</td><td>User id</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Sum</td>
+            <td>@item.UserId</td>
+        </tr>
+    }
+</table>

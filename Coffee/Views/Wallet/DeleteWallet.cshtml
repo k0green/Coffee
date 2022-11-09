@@ -1,0 +1,27 @@
+﻿@model Coffee.Entities.Wallet
+@{
+    ViewBag.Title = "Delete wallet";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Id</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>Money</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Money)
+        </dd>
+
+    </dl>
+
+    <div>
+        <form asp-controller="Wallet" asp-action="DeleteWallet" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Delete" />
+            </div>
+        </form>
+    </div>
+</div>

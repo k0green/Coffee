@@ -49,6 +49,7 @@ namespace Coffee.Controllers
         [ActionName("DeleteIngredient")]
         public async Task<IActionResult> ConfirmDeleteIngredient(int? id)
         {
+            ViewData["IngredientId"] = $"id={id}";
             if (id != null)
             {
                 return View(await _crudlIngredientService.ConfirmDeleteIngredient(id));

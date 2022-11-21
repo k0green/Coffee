@@ -2,10 +2,14 @@
 <html>
 <head>
     <title>Welkom</title>
+        <link rel="stylesheet" href="css/style.css">
 </head>
+
+<body>
     <table>
-                <td><a href="~/Home/MenuFirstPage">Go to order</a></td>
-    <td><a href="~/Wallet/CreateWallet">Create Wallet</a></td>
-    <td><a href="~/Home/UserProfile?id=@ViewData["UserId"]">profile</a></td>
+    <td><a href="~/Home/MenuFirstPage" class="btn btn-outline-dark">Go to order</a></td>
+    <td><a href="~/Wallet/CreateWallet" class="btn btn-outline-dark">Create Wallet</a></td>
+    <td><a href="~/Home/UserProfile?id=@ViewData["UserId"]" class="btn btn-outline-dark">profile</a></td>
     </table>
+</body>
 </html>

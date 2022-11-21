@@ -4,16 +4,26 @@ using Coffee.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using System.Runtime.CompilerServices;
 
 namespace Coffee.Controllers
 {
     public class IngredientOfDrinkController : Controller
     {
         private readonly ICrudlIngredientOfDrinkService _crudlIngredientOfDrinkService;
+        private readonly ICrudlDrinkService _crudlDrinkService;
+        private readonly ICrudlIngredientService _crudlIngredientService;
+        private readonly IDbContext _dbContext;
 
-        public IngredientOfDrinkController(ICrudlIngredientOfDrinkService crudlIngredientOfDrinkService)
+        public IngredientOfDrinkController(ICrudlIngredientOfDrinkService crudlIngredientOfDrinkService,
+            ICrudlDrinkService crudlDrinkService,
+            ICrudlIngredientService crudlIngredientService,
+            IDbContext dbContext)
         {
             _crudlIngredientOfDrinkService = crudlIngredientOfDrinkService;
+            _crudlDrinkService = crudlDrinkService;
+            _crudlIngredientService = crudlIngredientService;
+            _dbContext = dbContext;
         }
 
         public async Task<IActionResult> DisplayIngredientOfDrink()

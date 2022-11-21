@@ -2,17 +2,22 @@
 @{
     ViewBag.Title = "Все напитки";
 }
-<a asp-action="CreateDrink">Добавить напиток</a>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<a asp-action="CreateDrink" class="btn btn-outline-dark">Добавить напиток</a>
 <table class="table">
-    <tr><td>Название</td><td>Объем</td><td>Время</td><td>Цена</td></tr>
+    <tr><td>Название</td><td>Объем</td><td>Цена</td></tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.Name</td>
             <td>@item.Volume</td>
             <td>@item.Coast</td>
-            <td><a href="~/Drink/EditDrinks?id=@item.Id">edit drink</a></td>
-            <td><a href="~/Drink/DeleteDrink?id=@item.Id">delete drink</a></td>
+            <td><a href="~/Drink/EditDrinks?id=@item.Id" class="btn btn-outline-dark">edit drink</a></td>
+            <td><a href="~/Drink/DeleteDrink?id=@item.Id" class="btn btn-outline-dark">delete drink</a></td>
         </tr>
     }
 </table>

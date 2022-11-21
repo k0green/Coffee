@@ -2,13 +2,14 @@
 <html>
 <head>
     <title>Welkom</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
     <table>
     <input type="hidden" value="@ViewData["AdminId"]" name="Id" />
-                <td><a href="~/Drink/DisplayDrinks">   see drinks   </a></td>
-                <td><a href="~/Ingredients/DisplayIngredients">   see ingredients   </a></td>
-                <td><a href="~/IngredientOfDrink/DisplayIngredientOfDrink">   Display ingredients in drink   </a></td>
-                <td><a href="~/Home/DisplayBills">   see bills   </a></td>
-                <td><a href="~/Home/UserProfile?id=@ViewData["UserId"]">   profile   </a></td>
+    <td><a href="~/Drink/DisplayDrinks" class="btn btn-outline-dark">   see drinks   </a></td>
+    <td><a href="~/Ingredients/DisplayIngredients" class="btn btn-outline-dark">   see ingredients   </a></td>
+    <td><a href="~/IngredientOfDrink/DisplayIngredientOfDrink" class="btn btn-outline-dark">   Display ingredients in drink   </a></td>
+    <td><a href="~/Home/DisplayBills" class="btn btn-outline-dark">   see bills   </a></td>
+    <td><a href="~/Home/UserProfile?id=@ViewData["UserId"]" class="btn btn-outline-dark">   profile   </a></td>
     </table>
 </html>

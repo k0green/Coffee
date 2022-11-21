@@ -12,7 +12,7 @@ namespace Coffee.Interfaces
         public Task DeleteDrinkingredient(int? idd, int? idi);
         public Task<DrinksingredientItemModel> ConfirmDeleteDrinkingredient(int? idd, int? idi);
         public Task DecreaseIngredientAmount(int id);
-        public Task<List<DrinksingredientItemModel>> GetAllDrinksIngredientWithCondition(int id);
+        public Task<List<Drinksingredient>> GetAllDrinksIngredientWithCondition(int id);
 
 
 

@@ -111,7 +111,7 @@ namespace Coffee.Controllers
         [HttpGet]
         public async Task<IActionResult> BuyDrink()
         {
-            return View(await _crudlBillDrinkService.GetAllBillDrink());
+            return View(_crudlBillDrinkService.GetAllBillDrinkWithCondition(Guid.Parse(Request.Cookies["BillFromMenuId"])));
         }
 
         public async Task<IActionResult> BuyDrinkPost(Bill bill)

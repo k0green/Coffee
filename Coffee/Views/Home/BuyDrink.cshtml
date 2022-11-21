@@ -1,21 +1,27 @@
-﻿@{
-    Layout = null;
+﻿@model List<Coffee.Entities.Billdrink>
+@using static Coffee.Interfaces.IDbContext
+@{
+    ViewBag.Title = "Ordering";
 }
-
-<!DOCTYPE html>
-<html>
-<head><center>
-    <title>Ordering</title></center>
+<head>
+        <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div><center>
-        <h3>Order confirmation form</h3>
-        <p>Click next to confirm</p>
+<table class="table">
+<tr><td>Название</td><td>Цена</td></tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.DrinkId</td>
+        <td>@item.Coast</td>
+    </tr>
+}
+</table>
+<div>
+    <center>
         <form method="post">
             <table>
-                <td><a href="~/Home/BuyDrinkPost">Next</a></td>
+                <td><a href="~/Home/BuyDrinkPost" class="btn-outline-dark">Next</a></td>
             </table>
         </form>
-    </center></div>
-</body>
-</html>
+    </center>
+</div>

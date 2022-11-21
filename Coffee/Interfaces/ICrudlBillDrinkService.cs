@@ -9,7 +9,7 @@ namespace Coffee.Interfaces
         public Task<List<BilldrinkItemModel>> GetAllBillDrink();
         public Task<BilldrinkItemModel> GetBillDrink(Guid id);
         public Task CreateBillDrink(Guid billId, int drinkId, float coast);
-        public Task<IQueryable<BilldrinkItemModel>> GetAllBillDrinkWithCondition(Guid id);
+        public List<Billdrink> GetAllBillDrinkWithCondition(Guid id);
         public Task GetSum(Guid id);
 
 

@@ -2,8 +2,11 @@
 @{
     ViewBag.Title = "Сomposition";
 }
-<a asp-action="AdminFirstPage" asp-controller="Home">move to main page</a>
-<a asp-action="CreateIngredientOfDrink">Добавить ingredient</a>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<a asp-action="AdminFirstPage" asp-controller="Home" class="btn btn-outline-dark">move to main page</a>
+<a asp-action="CreateIngredientOfDrink" class="btn btn-outline-dark">Добавить ingredient</a>
 <table class="table">
     <tr>
         <td>DrinkId</td>
@@ -15,8 +18,8 @@
             <td>@item.DrinkId</td>
             <td>@item.IngredientsId</td>
             <td>@item.AmountInOneDrink</td>
-            <td><a href="~/IngredientOfDrink/EditIngredientOfDrink?idd=@item.DrinkId&idi=@item.IngredientsId">edit drink</a></td>
-            <td><a href="~/IngredientOfDrink/DeleteIngredientOfDrink?idd=@item.DrinkId&idi=@item.IngredientsId">delete drink</a></td>
+            <td><a href="~/IngredientOfDrink/EditIngredientOfDrink?idd=@item.DrinkId&idi=@item.IngredientsId" class="btn btn-outline-dark">edit drink</a></td>
+            <td><a href="~/IngredientOfDrink/DeleteIngredientOfDrink?idd=@item.DrinkId&idi=@item.IngredientsId" class="btn btn-outline-dark">delete drink</a></td>
         </tr>
     }
 </table>

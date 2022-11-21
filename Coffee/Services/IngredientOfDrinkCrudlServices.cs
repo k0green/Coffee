@@ -49,11 +49,14 @@ namespace Coffee.Services
 
         public async Task DecreaseIngredientAmount(int id)
         {
+
             var drinksingredient = await GetAllDrinksIngredientWithCondition(id);
+
             foreach (var drink in drinksingredient)
             {
-                var ingredient = await _crudlIngredientService.GetIngredient(drink.IngredientsId);
+                var ingredient = _dbContext.Ingredients.FirstOrDefault(i => i.Id == drink.IngredientsId);
                 ingredient.Amount -= drink.AmountInOneDrink;
+                _dbContext.SaveChanges();
             }
             _dbContext.SaveChanges();
         }
@@ -68,14 +71,9 @@ namespace Coffee.Services
             }
         }
 
-        public async Task<List<DrinksingredientItemModel>> GetAllDrinksIngredientWithCondition(int id)
+        public async Task<List<Drinksingredient>> GetAllDrinksIngredientWithCondition(int id)
         {
-            var drinksingredient = await _dbContext.Drinksingredients.Select(c => new DrinksingredientItemModel
-            {
-                DrinkId = c.DrinkId,
-                IngredientsId = c.IngredientsId,
-                AmountInOneDrink = c.AmountInOneDrink
-            }).Where(b => b.DrinkId == id).ToListAsync();
+            var drinksingredient = await _dbContext.Drinksingredients.Where(b => b.DrinkId == id).ToListAsync();
             return drinksingredient;
         }
 

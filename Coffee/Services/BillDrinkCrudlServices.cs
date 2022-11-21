@@ -2,7 +2,6 @@
 using Coffee.Interfaces;
 using Coffee.Model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 
 namespace Coffee.Services
 {
@@ -40,22 +39,16 @@ namespace Coffee.Services
             return billDrink;
         }
 
-        public async Task<IQueryable<BilldrinkItemModel>> GetAllBillDrinkWithCondition(Guid id)
+        public List<Billdrink> GetAllBillDrinkWithCondition(Guid id)
         {
-            var allBillDrinkWithCondition = _dbContext.Billdrinks.Select(b => new BilldrinkItemModel
-            {
-                BillId = b.BillId,
-                DrinkId = b.DrinkId,
-                Coast = b.Coast,
-            }).Where(b => b.BillId == id);
-
+            var allBillDrinkWithCondition = _dbContext.Billdrinks.Where(b => b.BillId == id).ToList();
             return allBillDrinkWithCondition;
         }
 
         public async Task GetSum(Guid id)
         {
             float? sum = 0;
-            var billdrink = await GetAllBillDrinkWithCondition(id);
+            var billdrink = GetAllBillDrinkWithCondition(id);
             foreach (var coasts in billdrink)
             {
                 sum += coasts.Coast;

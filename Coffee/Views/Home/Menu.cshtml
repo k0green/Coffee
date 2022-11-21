@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<Coffee.Entities.Drink>
 @{
-    Layout = null;
+    ViewBag.Title = "Menu";
 }
-<!DOCTYPE html>
-
-<html>
-<head>
+@*<head>
     <title>Menu</title>
+</head>*@
+<head>
+@*    <title>Menu</title>
+*@    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h3>Drinks</h3>
-    <table>
+<a href="~/Home/BuyDrink" class="btn btn-outline-dark">Basket</a>
+    <table class="table">
         <tr>
             <td>Id</td>
             <td>Name</td>
@@ -25,10 +25,7 @@
                 <td>@drink.Name</td>
                 <td>@drink.Coast</td>
                 <td>@drink.Volume</td>
-                <td><a href="~/Home/MenuPost?id=@drink.Id">Buy</a></td>
+                <td><a href="~/Home/MenuPost?id=@drink.Id" class="btn btn-outline-dark">Buy</a></td>
             </tr>
         }
-        <a href="~/Home/BuyDrink">Basket</a>
     </table>
-</body>
-</html>

@@ -2,8 +2,11 @@
 @{
     ViewBag.Title = "All ingredient";
 }
-<a asp-action="AdminFirstPage" asp-controller="Home">move to main page</a>
-<a asp-action="CreateIngredient">Добавить ingredient</a>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<a asp-action="AdminFirstPage" asp-controller="Home" class="btn btn-outline-dark">move to main page</a>
+<a asp-action="CreateIngredient" class="btn btn-outline-dark">Добавить ingredient</a>
 <table class="table">
     <tr><td>Name</td><td>Amount</td>
     @foreach (var item in Model)
@@ -11,8 +14,8 @@
         <tr>
             <td>@item.Name</td>
             <td>@item.Amount</td>
-            <td><a href="~/Ingredients/EditIngredient?id=@item.Id">edit drink</a></td>
-            <td><a href="~/Ingredients/DeleteIngredient?id=@item.Id">delete drink</a></td>
+            <td><a href="~/Ingredients/EditIngredient?id=@item.Id" class="btn btn-outline-dark">edit drink</a></td>
+            <td><a href="~/Ingredients/DeleteIngredient?id=@item.Id" class="btn btn-outline-dark">delete drink</a></td>
         </tr>
     }
 </table>

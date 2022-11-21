@@ -2,7 +2,10 @@
 @{
     ViewBag.Title = "Edit drink";
 }
-<a asp-action="AdminFirstPage" asp-controller="Home">move to main page</a>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<a asp-action="AdminFirstPage" asp-controller="Home" class="btn btn-outline-dark">move to main page</a>
 <form asp-action="EditDrink" asp-controller="Drink" asp-route-id="@Model.Id">
     <div class="form-group">
         <label asp-for="Name" class="control-label">Имя</label>
